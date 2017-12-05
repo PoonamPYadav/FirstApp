@@ -1,0 +1,35 @@
+<div class="main-content">
+  <div class="part1"  ng-controller="mainctrl">
+    <div ng-repeat="res in driverList" >
+      <img ng-src="{{res.flag}}" width="100px" height="100px"><br/>
+     Country: {{res.Constructors[0].country}}   <br/>
+     Name: {{res.Driver.givenLname}} {{res.Driver.givenFname}}<br/>
+     Birth: {{res.Constructors[0].birth}}<br/>
+        </div>
+  </div>
+  <div class="part2"  ng-controller="infoController">
+
+    <table class="table1">
+      <thead>
+        <tr>
+          <th colspan="4">Formula 1 2013 Results</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr bgcolor="#dddddd">
+          <td>Round</td>
+          <td>Grand Prix</td>
+          <td>Team</td>
+            <td>Round</td>
+        </tr>
+        <tr ng-repeat="race in races">
+          <td>{{race.round}}</td>
+          <td>{{race.Results[0].grid}}</td>
+          <td>{{race.team}}</td>
+          <td>{{race.Results[0].position}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="backbtn" ng-click="goback()">Go Back</button>
+  </div>
+</div>

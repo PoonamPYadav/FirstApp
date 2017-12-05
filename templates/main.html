@@ -1,0 +1,31 @@
+
+
+<div >
+  <div class="container" ng-controller="driverController">
+
+    <div class="serch">
+      <input type="text" ng-model='namefilter' placeholder="serch..." class="input" />
+      <img src="..\assets\img\search.png" alt="serchimg" class="img" />
+    </div>
+
+    <div class="divtable">
+
+      <table class="table">
+        <thead>
+        <th colspan="4">Drivers Championship Standings</th>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="driver in driverList | filter: namefilter">
+            <td>{{driver.Id}}</td>
+            <td><a href="#!info/{{driver.Id}} ">{{driver.Driver.givenFname}} {{driver.Driver.givenLname}}</a></td>
+            <td>{{driver.Constructors[0].country}}</td>
+            <td>{{driver.points}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
